@@ -13,7 +13,7 @@ export default React.createClass({
 
   render (){
     return (
-      <div onClick={this.onClick>
+      <div onClick={this.onClick}>
         <nav className='top-nav top-nav-left cf' role='navigation'>
           <input id='menu-toggle' className='menu-toggle' type='checkbox'/>
           <label htmlFor='menu-toggle'> Menu </label>
