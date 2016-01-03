@@ -1,3 +1,4 @@
+import app from 'ampersand-app'
 import React from 'react'
 import Router from 'ampersand-router'
 import qs from 'qs'
@@ -50,6 +51,7 @@ export default Router.extend({
       json: true
     }, (err, req, body) => {
       console.log(body)
+      app.me.token = body.token
     })
   }
 })
