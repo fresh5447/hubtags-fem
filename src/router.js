@@ -22,6 +22,7 @@ export default Router.extend({
   routes: {
     '': 'public',
     'repos': 'repos',
+    'logout': 'logout',
     'login': 'login',
     'auth/callback?:query': 'authCallback'
   },
@@ -42,6 +43,11 @@ export default Router.extend({
     })
   },
 
+  logout (){
+    window.localStorage.clear()
+    window.location = '/'
+  },
+
   authCallback (query){
     query = qs.parse(query)
     console.log(query)
@@ -52,6 +58,7 @@ export default Router.extend({
     }, (err, req, body) => {
       console.log(body)
       app.me.token = body.token
+      this.redirectTo('/repos')
     })
   }
 })
